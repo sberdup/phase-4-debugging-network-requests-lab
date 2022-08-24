@@ -63,11 +63,20 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+  chrome network tab, 500 server error
+  server logs, uninitialized constant toyscontroller::toys
+  #update method changed from Toys to Toy for model ref
 
 - Update the number of likes for a toy
 
   - How I debugged:
+clicking caused syntax error, end of JSON input in toys/ID fetch
+server logs show like was updated, so does refresh. getting back the info after must be the issue
+added missing render JSON line
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+donate button shows 404 on network tab in chrome
+server logs show routing error, none for #delete
+added :destroy route to config/routes
